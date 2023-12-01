@@ -407,6 +407,27 @@ docker-targets:
       xorg-x11-fonts
       libz1
 
+   altlinux:
+    source: docker/Dockerfile.altlinux
+    args:
+      from: alt:latest
+      python: python3
+    output: rpm
+    matrix: ['amd64']
+    depend: >
+      ca-certificates
+      fontconfig-devel
+      libfreetype-devel
+      libjpeg-devel
+      libpng-devel
+      libssl3
+      libssl-devel
+      libX11-devel
+      libXext-devel
+      libXrender-devel
+      fonts-bitmap-75dpi
+      zlib-devel
+
   mxe-cross-win32:
     source:         docker/Dockerfile.mxe
     args:
