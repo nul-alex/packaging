@@ -43,6 +43,7 @@ jobs:
           - jammy-ppc64el
           - raspberrypi.bookworm-armhf
           - raspberrypi.bullseye-armhf
+          - altlinux-amd64
       fail-fast: false
     steps:
       - name: configure docker
