@@ -1,0 +1,20 @@
+ARG  from
+FROM ${from}
+
+ARG  jpeg=libjpeg-devel
+ARG  python=python3
+ARG  ssl=libssl-devel
+ENV  CFLAGS=-w CXXFLAGS=-w
+
+RUN apt-get update && apt-get install -y -q \
+    fontconfig \
+    libfreetype-devel \
+    $jpeg \
+    libpng-dev \
+    $ssl \
+    libX11-devel \
+    libXext-devel \
+    libXrender-devel \
+    $python \
+    zlib-devel \
+    && rm -rf /var/lib/apt/lists/*
